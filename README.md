@@ -24,3 +24,9 @@ There will be two separated codes:
   - Verify results
 
 ### Automated testing ###
+
+- Write once, run often
+- Execute anytime
+- Catch bugs before deploying
+- Very reliable and efficient
+- Confidant deployment
