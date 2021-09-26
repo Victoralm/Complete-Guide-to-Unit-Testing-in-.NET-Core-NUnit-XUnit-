@@ -1,3 +1,3 @@
-# [Complete Guide Unit Testing in .NET Core NUnit XUnit](https://github.com/Victoralm/Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-) #
+# [Complete Guide Unit Testing in .NET Core NUnit XUnit](https://www.udemy.com/course/complete-guide-to-unit-testing-in-net-core-nunit-xunit/) #
 
 Course Material
