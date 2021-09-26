@@ -30,3 +30,23 @@ There will be two separated codes:
 - Catch bugs before deploying
 - Very reliable and efficient
 - Confidant deployment
+
+### Types of tests ###
+
+- Unit test:
+  - May test a single class or perhaps a functionally related to a class
+  - Offers the best depth of testing, but doesn't cover the entire system
+  - Quickly to write and execution speed
+- Integration test:
+  - Potentially less in-depth than unit test, but covers a greater range of the system
+  - Test the application with its external dependencies
+  - Longer execution times, because of the external dependencies
+- User Interface test:
+  - Covers a great range of an application, from the user interface (like a
+    buttom click) to all the way down through tha subsystem, even right down to
+    the database level
+  - Covers a wide range, but don't go in depth. Not all of classes, nor their
+    functionalities or properties
+  - The slowest of all tests
+  - Very brittle, the smallest change can break the test, since it tests a wide
+    range of functionalities
