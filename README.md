@@ -50,3 +50,19 @@ There will be two separated codes:
   - The slowest of all tests
   - Very brittle, the smallest change can break the test, since it tests a wide
     range of functionalities
+
+### Testing Pyramid ###
+
+             = UI =
+       === Integration ===
+    ========== Unit =========
+
+A final application should have all of the three tests, which is: Unit tests,
+Integration tests and UI tests. But not exactly in equal proportion...
+As shown in the pyramid, the biggest space is occupied by the Unit test. Then
+the Integration tests, to give more confidence as compared to the Unit tests.
+Finally, the smallest amount tha comprehends the UI tests.
+
+Keep in mind that: more tests means more time consuming and more cost...
+
+### Logical Phases of an Automated Test ###
