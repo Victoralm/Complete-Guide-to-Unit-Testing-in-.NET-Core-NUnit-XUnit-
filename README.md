@@ -66,3 +66,17 @@ Finally, the smallest amount tha comprehends the UI tests.
 Keep in mind that: more tests means more time consuming and more cost...
 
 ### Logical Phases of an Automated Test ###
+
+The triple A (AAA):
+
+- Arrange
+  - Initial setup
+  - Create object instances
+  - Create test data
+- Act
+  - Execution of application code
+  - Call methods
+  - Set propreties
+- Assert
+  - Check results
+  - Test pass / fail
