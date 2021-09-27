@@ -5,7 +5,7 @@
 
 ## What is Automated Testing ##
 
-Write code to test the code of yoru application, and then repeatedly run the
+Write code to test the code of your application, and then repeatedly run the
 tests in automated fashion.
 
 There will be two separated codes:
