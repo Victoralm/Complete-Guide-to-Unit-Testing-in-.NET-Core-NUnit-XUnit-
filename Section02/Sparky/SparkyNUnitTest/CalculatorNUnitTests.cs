@@ -37,13 +37,15 @@ namespace SparkyNUnitTest
         }
         
         [Test]
-        public void IsOddNumber_InputOddNumber_ReturnTrue()
+        [TestCase(21)]
+        [TestCase(19)]
+        public void IsOddNumber_InputOddNumber_ReturnTrue(int num)
         {
             // Arrange (Test initialization)
             Calculator calc = new Calculator();
 
             // Act (Invoking needed methods)
-            var result = calc.IsOddNumber(7);
+            var result = calc.IsOddNumber(num);
 
             // Assert (Checking the results)
             //Assert.AreEqual(true, result);

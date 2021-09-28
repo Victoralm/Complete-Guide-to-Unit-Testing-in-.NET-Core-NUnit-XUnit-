@@ -40,3 +40,53 @@ Naming a test class:
 
 Naming a test method:
 `<nameOfTheMethodToBeTested>_<typesAndAmountOfParameters>_<descriptiveExpectedResult>`
+
+## NUnit Assertion Model ##
+
+### Classic Model ###
+
+The classic Assert model uses a separate method to express each individual
+assertion of which it is capable.
+
+- `Assert.AreEqual(30, result)` if the value and the return are equal
+- `Assert.IsTrue(result)` for booleans
+
+### Constraint Model (Assert.That) ###
+
+The constraint-based Assert model uses a single method of the Assert class for
+all assertions. The logic necessary to carry out each assertion is embedded in
+the constraint object passed as the second parameter to that method.
+
+- `Assert.That(30, Is.EqualTo(result))`
+- `Assert.That(result, Is.False)`
+
+## Passing values to tests parameters ##
+
+Example method:
+
+```csharp
+[Test]
+[TestCase(21)]
+[TestCase(19)]
+public void IsOddNumber_InputOddNumber_ReturnTrue(int num)
+{
+    // Arrange (Test initialization)
+    Calculator calc = new Calculator();
+
+    // Act (Invoking needed methods)
+    var result = calc.IsOddNumber(num);
+
+    // Assert (Checking the results)
+    Assert.IsTrue(result);
+}
+```
+
+Defining the value of the parameter:
+`[TestCase(21)]`
+
+For multiple parameters:
+`[TestCase(21, true)]`
+or:
+`[TestCase(19.52, "string")]`
+
+Notice that it can be used multiple times.
