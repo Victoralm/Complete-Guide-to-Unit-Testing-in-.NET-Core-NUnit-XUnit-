@@ -8,6 +8,11 @@ namespace Sparky
         {
             return a + b;
         }
+        
+        public double AddNumbersDouble(double a, double b)
+        {
+            return a + b;
+        }
 
         public bool IsOddNumber(int num)
         {
