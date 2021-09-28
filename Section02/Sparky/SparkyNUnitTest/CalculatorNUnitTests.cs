@@ -19,5 +19,37 @@ namespace SparkyNUnitTest
             // Assert (Checking the results)
             Assert.AreEqual(30, result);
         }
+        
+        [Test]
+        public void IsOddNumber_InputEvenNumber_ReturnFalse()
+        {
+            // Arrange (Test initialization)
+            Calculator calc = new Calculator();
+
+            // Act (Invoking needed methods)
+            var result = calc.IsOddNumber(6);
+
+            // Assert (Checking the results)
+            //Assert.AreEqual(false, result);
+            //Assert.That(result, Is.EqualTo(false));
+            //Assert.IsTrue(result);
+            Assert.IsFalse(result);
+        }
+        
+        [Test]
+        public void IsOddNumber_InputOddNumber_ReturnTrue()
+        {
+            // Arrange (Test initialization)
+            Calculator calc = new Calculator();
+
+            // Act (Invoking needed methods)
+            var result = calc.IsOddNumber(7);
+
+            // Assert (Checking the results)
+            //Assert.AreEqual(true, result);
+            //Assert.That(result, Is.EqualTo(true));
+            //Assert.IsFalse(result);
+            Assert.IsTrue(result);
+        }
     }
 }

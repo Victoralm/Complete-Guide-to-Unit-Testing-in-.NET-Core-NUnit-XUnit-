@@ -8,5 +8,10 @@ namespace Sparky
         {
             return a + b;
         }
+
+        public bool IsOddNumber(int num)
+        {
+            return num % 2 != 0;
+        }
     }
 }
