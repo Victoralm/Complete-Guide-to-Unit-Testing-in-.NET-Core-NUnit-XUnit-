@@ -90,3 +90,21 @@ or:
 `[TestCase(19.52, "string")]`
 
 Notice that it can be used multiple times.
+
+## Checking expected result ##
+
+Example method:
+
+```csharp
+[Test]
+[TestCase(20, ExpectedResult = false)]
+[TestCase(19, ExpectedResult = true)]
+public bool IsOddNumber_InputNumber_ReturnTrueIffOdd(int num)
+{
+    Calculator calc = new Calculator();
+    return calc.IsOddNumber(num);
+}
+```
+
+Defining the parameter value and the expected result of the test:
+`[TestCase(20, ExpectedResult = false)]`
