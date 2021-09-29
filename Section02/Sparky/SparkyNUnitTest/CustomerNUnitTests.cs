@@ -92,5 +92,23 @@ namespace Sparky
 
             Assert.That(() => this._customer.GreetAndCombineNames("", "Spark"), Throws.ArgumentException);
         }
+
+        [Test]
+        public void CustomerType_CreateCustomerWithLessThan100Order_ReturnBasicCustomer()
+        {
+            this._customer.OrderTotal = 10;
+            var result = this._customer.GetCustomerDetails();
+
+            Assert.That(result, Is.TypeOf<CustomerBasic>());
+        }
+
+        [Test]
+        public void CustomerType_CreateCustomerWithMoreThan100Order_ReturnBasicPlatinum()
+        {
+            this._customer.OrderTotal = 101;
+            var result = this._customer.GetCustomerDetails();
+
+            Assert.That(result, Is.TypeOf<CustomerPlatinum>());
+        }
     }
 }
