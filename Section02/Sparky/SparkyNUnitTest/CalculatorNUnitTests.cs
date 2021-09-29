@@ -95,6 +95,14 @@ namespace SparkyNUnitTest
             Assert.AreEqual(expectedOddRange, result);
             Assert.That(result, Is.EqualTo(expectedOddRange));
             Assert.That(result, Is.EquivalentTo(expectedOddRange)); // Specific to collections
+            Assert.Contains(7, expectedOddRange);
+            Assert.That(result, Does.Contain(7));
+            Assert.That(result, Is.Not.Empty);
+            Assert.That(result.Count, Is.EqualTo(3));
+            Assert.That(result, Has.No.Member(6));
+            Assert.That(result, Is.Ordered);
+            //Assert.That(result, Is.Ordered.Descending);
+            Assert.That(result, Is.Unique); // Checks if each value on the list are unique
         }
 
 
