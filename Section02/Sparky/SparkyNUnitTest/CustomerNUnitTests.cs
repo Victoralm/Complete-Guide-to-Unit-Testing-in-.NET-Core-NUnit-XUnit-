@@ -85,6 +85,12 @@ namespace Sparky
             Assert.AreEqual("Empty first name...", exceptionDetails.Message);
 
             Assert.That(() => this._customer.GreetAndCombineNames("", "Spark"), Throws.ArgumentException.With.Message.EqualTo("Empty first name..."));
+
+
+            // Checks oly if an Exception has been throwed
+            Assert.Throws<ArgumentException>(() => this._customer.GreetAndCombineNames("", "Spark"));
+
+            Assert.That(() => this._customer.GreetAndCombineNames("", "Spark"), Throws.ArgumentException);
         }
     }
 }
