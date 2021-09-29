@@ -36,13 +36,16 @@ namespace Sparky
             Assert.That(fullName, Does.EndWith("Spark")); // Case sensitive
             Assert.That(fullName, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
 
-            Assert.AreEqual("Hello, Ben Spark", this._customer.GreetMessage);
-            Assert.That(this._customer.GreetMessage, Is.EqualTo("Hello, Ben Spark"));
-            Assert.That(this._customer.GreetMessage, Does.Contain("Hello,")); // Case sensitive
-            Assert.That(this._customer.GreetMessage, Does.Contain("hello,").IgnoreCase);
-            Assert.That(this._customer.GreetMessage, Does.StartWith("Hello")); // Case sensitive
-            Assert.That(this._customer.GreetMessage, Does.EndWith("Spark")); // Case sensitive
-            Assert.That(this._customer.GreetMessage, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
+            // Runs all the asserts, doesn't stop on the first failutre
+            Assert.Multiple(() => {
+                Assert.AreEqual("Hello, Ben Spark", this._customer.GreetMessage);
+                Assert.That(this._customer.GreetMessage, Is.EqualTo("Hello, Ben Spark"));
+                Assert.That(this._customer.GreetMessage, Does.Contain("Hello,")); // Case sensitive
+                Assert.That(this._customer.GreetMessage, Does.Contain("hello,").IgnoreCase);
+                Assert.That(this._customer.GreetMessage, Does.StartWith("Hello")); // Case sensitive
+                Assert.That(this._customer.GreetMessage, Does.EndWith("Spark")); // Case sensitive
+                Assert.That(this._customer.GreetMessage, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
+            });
         }
 
         [Test]
