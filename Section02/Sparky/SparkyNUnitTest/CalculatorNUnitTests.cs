@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Sparky;
 using System;
+using System.Collections.Generic;
 
 namespace SparkyNUnitTest
 {
@@ -78,6 +79,22 @@ namespace SparkyNUnitTest
         {
             Calculator calc = new Calculator();
             return calc.IsOddNumber(num);
+        }
+
+        [Test]
+        public void GetOddRange_InputMinAndMaxRange_ReturnValidOddNumberRange()
+        {
+            // Arrange (Test initialization)
+            Calculator calculator = new Calculator();
+            List<int> expectedOddRange = new() { 5, 7, 9 }; // 5 - 10
+
+            // Act (Invoking needed methods)
+            List<int> result = calculator.GetOddRange(5, 10);
+
+            // Assert (Checking the results)
+            Assert.AreEqual(expectedOddRange, result);
+            Assert.That(result, Is.EqualTo(expectedOddRange));
+            Assert.That(result, Is.EquivalentTo(expectedOddRange)); // Specific to collections
         }
 
 
