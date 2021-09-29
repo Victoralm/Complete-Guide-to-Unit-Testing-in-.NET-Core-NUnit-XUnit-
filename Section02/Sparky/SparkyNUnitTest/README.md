@@ -108,3 +108,62 @@ public bool IsOddNumber_InputNumber_ReturnTrueIffOdd(int num)
 
 Defining the parameter value and the expected result of the test:
 `[TestCase(20, ExpectedResult = false)]`
+
+## Global initialization for Class ##
+
+Example class:
+
+```csharp
+[TestFixture]
+public class CustomerNUnitTests
+{
+    private Customer _customer;
+
+    [SetUp]
+    public void Setup()
+    {
+        this._customer = new Customer();
+    }
+
+    [Test]
+    public void GreetAndCombineName_InputFirstAndLastName_ReturnFullName()
+    {
+        // Arrange
+
+        // Act
+        string fullName = this._customer.GreetAndCombineNames("Ben", "Spark");
+
+        // Assert
+        Assert.AreEqual("Hello, Ben Spark", this._customer.GreetMessage);
+        Assert.That(this._customer.GreetMessage, Is.EqualTo("Hello, Ben Spark"));
+        Assert.That(this._customer.GreetMessage, Does.Contain("Hello,")); // Case sensitive
+        Assert.That(this._customer.GreetMessage, Does.Contain("hello,").IgnoreCase);
+        Assert.That(this._customer.GreetMessage, Does.StartWith("Hello")); // Case sensitive
+        Assert.That(this._customer.GreetMessage, Does.EndWith("Spark")); // Case sensitive
+        Assert.That(this._customer.GreetMessage, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
+    }
+
+    [Test]
+    public void GreetMessage_NotGreeted_ReturnNull()
+    {
+        // Arrange
+
+        // Act
+
+        // Assert
+        Assert.IsNull(this._customer.GreetMessage);
+    }
+}
+```
+
+Defining a SetUp method (act as a Constructor-ish):
+
+```csharp
+private <Class> _<field>;
+
+[SetUp]
+public void Setup()
+{
+    ...
+}
+```

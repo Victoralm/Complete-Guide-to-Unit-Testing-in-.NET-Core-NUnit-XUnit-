@@ -10,14 +10,22 @@ namespace Sparky
     [TestFixture]
     public class CustomerNUnitTests
     {
+        private Customer _customer;
+
+        [SetUp]
+        public void Setup()
+        {
+            this._customer = new Customer();
+        }
+
         [Test]
         public void GreetAndCombineName_InputFirstAndLastName_ReturnFullName()
         {
             // Arrange
-            var customer = new Customer();
+            
 
             // Act
-            string fullName = customer.GreetAndCombineNames("Ben", "Spark");
+            string fullName = this._customer.GreetAndCombineNames("Ben", "Spark");
 
             // Assert
             Assert.AreEqual("Hello, Ben Spark", fullName);
@@ -28,25 +36,25 @@ namespace Sparky
             Assert.That(fullName, Does.EndWith("Spark")); // Case sensitive
             Assert.That(fullName, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
 
-            Assert.AreEqual("Hello, Ben Spark", customer.GreetMessage);
-            Assert.That(customer.GreetMessage, Is.EqualTo("Hello, Ben Spark"));
-            Assert.That(customer.GreetMessage, Does.Contain("Hello,")); // Case sensitive
-            Assert.That(customer.GreetMessage, Does.Contain("hello,").IgnoreCase);
-            Assert.That(customer.GreetMessage, Does.StartWith("Hello")); // Case sensitive
-            Assert.That(customer.GreetMessage, Does.EndWith("Spark")); // Case sensitive
-            Assert.That(customer.GreetMessage, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
+            Assert.AreEqual("Hello, Ben Spark", this._customer.GreetMessage);
+            Assert.That(this._customer.GreetMessage, Is.EqualTo("Hello, Ben Spark"));
+            Assert.That(this._customer.GreetMessage, Does.Contain("Hello,")); // Case sensitive
+            Assert.That(this._customer.GreetMessage, Does.Contain("hello,").IgnoreCase);
+            Assert.That(this._customer.GreetMessage, Does.StartWith("Hello")); // Case sensitive
+            Assert.That(this._customer.GreetMessage, Does.EndWith("Spark")); // Case sensitive
+            Assert.That(this._customer.GreetMessage, Does.Match("Hello, [A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
         }
 
         [Test]
         public void GreetMessage_NotGreeted_ReturnNull()
         {
             // Arrange
-            var customer = new Customer();
+            
 
             // Act
 
             // Assert
-            Assert.IsNull(customer.GreetMessage);
+            Assert.IsNull(this._customer.GreetMessage);
         }
     }
 }
