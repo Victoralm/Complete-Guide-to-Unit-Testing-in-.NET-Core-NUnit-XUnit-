@@ -2,9 +2,9 @@
 
 Nuget packages for the project:
 
-- NUnit
-- NUnit3TestAdapter
-- Microsoft.NET.Test.Sdk
+- [NUnit](https://www.nuget.org/packages/NUnit/)
+- [NUnit3TestAdapter](https://www.nuget.org/packages/NUnit3TestAdapter/)
+- [Microsoft.NET.Test.Sdk](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/)
 
 NUnit project namespace:
 
