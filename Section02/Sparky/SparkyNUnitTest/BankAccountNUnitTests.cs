@@ -31,6 +31,7 @@ namespace Sparky
         public void DepositLog_Add100_ReturnTrue()
         {
             var logMock = new Mock<ILogBook>();
+            logMock.Setup(x => x.Message(""));
 
             BankAccount bankAccount = new(logMock.Object);
             var result = bankAccount.Deposit(100);
