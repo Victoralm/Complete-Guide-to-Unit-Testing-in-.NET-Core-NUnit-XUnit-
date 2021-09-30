@@ -76,5 +76,21 @@ namespace Sparky
             Assert.AreEqual("F", calcGrading);
             Assert.That(calcGrading, Is.EqualTo("F"));
         }
+
+        [Test]
+        [TestCase(95, 90, ExpectedResult = "A")]
+        [TestCase(85, 90, ExpectedResult = "B")]
+        [TestCase(95, 65, ExpectedResult = "B")]
+        [TestCase(65, 90, ExpectedResult = "C")]
+        [TestCase(95, 55, ExpectedResult = "F")]
+        [TestCase(65, 55, ExpectedResult = "F")]
+        [TestCase(50, 90, ExpectedResult = "F")]
+        public string GetGrade_AllGradeLogicalScenarios_ReturnGrade(int score, int attendance)
+        {
+            // Arrange
+            this._gCalculator.Score = score;
+            this._gCalculator.AttendancePercentage = attendance;
+            return this._gCalculator.GetGrade();
+        }
     }
 }
