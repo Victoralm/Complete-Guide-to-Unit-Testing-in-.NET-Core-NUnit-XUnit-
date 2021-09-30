@@ -14,7 +14,7 @@ namespace Sparky
         [SetUp]
         public void Setup()
         {
-            this._bankAccount = new(new LogBook());
+            this._bankAccount = new(new LogFakker());
         }
 
         [Test]
