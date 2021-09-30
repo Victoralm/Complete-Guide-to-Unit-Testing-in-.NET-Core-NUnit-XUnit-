@@ -167,3 +167,19 @@ public void Setup()
     ...
 }
 ```
+
+
+## Mocking ##
+
+Isolation of a class to test it, replacing its dependecies with fake ones.
+
+An object under test may have dependencies on other objects. Mocking is replacing
+the actual dependency, with a test time only version that enables easier
+isolation of code that we want to test.
+
+Different mocking frameworks:
+
+- [MOQ](https://github.com/moq/moq4)
+- [NMock3](https://www.nuget.org/packages/NMock3/)
+- [FakeItEasy](https://fakeiteasy.github.io/)
+- [NSubstitute](https://nsubstitute.github.io/)
