@@ -12,6 +12,7 @@ namespace Sparky
         bool LogToDb(string message);
         bool LogBalanceAfterWithdraw(int balanceAfterWithdraw);
         string MessageWithReturnStr(string message);
+        bool LogWithOutputResult(string str, out string outputStr);
     }
 
     public class LogBook : ILogBook
@@ -42,6 +43,12 @@ namespace Sparky
         {
             Console.WriteLine(message);
             return message.ToLower();
+        }
+
+        public bool LogWithOutputResult(string str, out string outputStr)
+        {
+            outputStr = $"Hello {str}";
+            return true;
         }
     }
 
