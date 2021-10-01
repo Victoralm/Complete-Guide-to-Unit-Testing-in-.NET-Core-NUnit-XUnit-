@@ -18,14 +18,14 @@ namespace Sparky
             
         }
 
-        [Test]
-        public void DepositLogFakker_Add100_ReturnTrue()
-        {
-            BankAccount bankAccount = new(new LogFakker());
-            var result = bankAccount.Deposit(100);
-            Assert.IsTrue(result);
-            Assert.That(bankAccount.GetBalance, Is.EqualTo(100));
-        }
+        //[Test]
+        //public void DepositLogFakker_Add100_ReturnTrue()
+        //{
+        //    BankAccount bankAccount = new(new LogFakker());
+        //    var result = bankAccount.Deposit(100);
+        //    Assert.IsTrue(result);
+        //    Assert.That(bankAccount.GetBalance, Is.EqualTo(100));
+        //}
 
         [Test]
         public void DepositLog_Add100_ReturnTrue()

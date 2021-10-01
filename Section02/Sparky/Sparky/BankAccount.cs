@@ -29,12 +29,12 @@ namespace Sparky
         {
             if(amount <= this._balance)
             {
-                this._logBook.Message("Withdraw invoked");
+                this._logBook.LogToDb($"Withdraw ammount: {amount}");
                 this._balance -= amount;
-                return true;
+                return this._logBook.LogBalanceAfterWithdraw(this._balance);
             }
 
-            return false;
+            return this._logBook.LogBalanceAfterWithdraw(this._balance - amount);
         }
 
         public int GetBalance()
