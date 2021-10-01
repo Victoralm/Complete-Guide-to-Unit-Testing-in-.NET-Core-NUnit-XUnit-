@@ -40,8 +40,7 @@ namespace Sparky
         }
 
         [Test]
-        [TestCase(200, 100)] // Pass
-        [TestCase(200, 300)] // Fail
+        [TestCase(200, 100)]
         public void Withdraw_Withdraw100With200Balance_ReturnsTrue(int balance, int withdraw)
         {
             var logMock = new Mock<ILogBook>();
@@ -54,6 +53,26 @@ namespace Sparky
             var result = bankAccount.Withdraw(withdraw);
 
             Assert.IsTrue(result);
+        }
+        
+        [Test]
+        [TestCase(200, 300)]
+        public void Withdraw_Withdraw300With200Balance_ReturnsFalse(int balance, int withdraw)
+        {
+            var logMock = new Mock<ILogBook>();
+            logMock.Setup(u => u.LogToDb(It.IsAny<string>())).Returns(true);
+            // Implies that if "x < 0" returns false
+            logMock.Setup(u => u.LogBalanceAfterWithdraw(It.Is<int>(x => x > 0))).Returns(true);
+            // Imperatively returning false when "x < 0" (unnecessary)
+            //logMock.Setup(u => u.LogBalanceAfterWithdraw(It.Is<int>(x => x < 0))).Returns(false);
+            //logMock.Setup(u => u.LogBalanceAfterWithdraw(It.IsInRange<int>(int.MinValue, -1, Moq.Range.Inclusive))).Returns(false);
+
+            BankAccount bankAccount = new(logMock.Object);
+            bankAccount.Deposit(balance);
+
+            var result = bankAccount.Withdraw(withdraw);
+
+            Assert.IsFalse(result);
         }
 
     }
