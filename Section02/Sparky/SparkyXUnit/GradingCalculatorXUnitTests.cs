@@ -1,24 +1,23 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
 namespace Sparky
 {
-    [TestFixture]
+    
     public class GradingCalculatorXUnitTests
     {
         private GradingCalculator _gCalculator;
 
-        [SetUp]
-        public void Setup()
+        public GradingCalculatorXUnitTests()
         {
             this._gCalculator = new GradingCalculator();
         }
 
-        [Test]
+        [Fact]
         public void GetGrade_SetScoreAndAttendancePercentage_ReturnGradeA()
         {
             // Arrange
@@ -27,11 +26,10 @@ namespace Sparky
             var calcGrading = this._gCalculator.GetGrade();
 
             // Assert
-            Assert.AreEqual("A", calcGrading);
-            Assert.That(calcGrading, Is.EqualTo("A"));
+            Assert.Equal("A", calcGrading);
         }
 
-        [Test]
+        [Fact]
         public void GetGrade_SetScoreAndAttendancePercentage_ReturnGradeB()
         {
             // Arrange
@@ -40,15 +38,13 @@ namespace Sparky
             var calcGrading = this._gCalculator.GetGrade();
 
             // Assert
-            Assert.AreEqual("B", calcGrading);
-            Assert.That(calcGrading, Is.EqualTo("B"));
+            Assert.Equal("B", calcGrading);
             this._gCalculator.Score = 95;
             this._gCalculator.AttendancePercentage = 65;
-            Assert.AreEqual("B", this._gCalculator.GetGrade());
-            Assert.That(this._gCalculator.GetGrade(), Is.EqualTo("B"));
+            Assert.Equal("B", this._gCalculator.GetGrade());
         }
 
-        [Test]
+        [Fact]
         public void GetGrade_SetScoreAndAttendancePercentage_ReturnGradeC()
         {
             // Arrange
@@ -57,14 +53,13 @@ namespace Sparky
             var calcGrading = this._gCalculator.GetGrade();
 
             // Assert
-            Assert.AreEqual("C", calcGrading);
-            Assert.That(calcGrading, Is.EqualTo("C"));
+            Assert.Equal("C", calcGrading);
         }
 
-        [Test]
-        [TestCase(95, 55)]
-        [TestCase(65, 55)]
-        [TestCase(50, 90)]
+        [Theory]
+        [InlineData(95, 55)]
+        [InlineData(65, 55)]
+        [InlineData(50, 90)]
         public void GetGrade_SetScoreAndAttendancePercentage_ReturnGradeF(int score, int attendance)
         {
             // Arrange
@@ -73,24 +68,24 @@ namespace Sparky
             var calcGrading = this._gCalculator.GetGrade();
 
             // Assert
-            Assert.AreEqual("F", calcGrading);
-            Assert.That(calcGrading, Is.EqualTo("F"));
+            Assert.Equal("F", calcGrading);
         }
 
-        [Test]
-        [TestCase(95, 90, ExpectedResult = "A")]
-        [TestCase(85, 90, ExpectedResult = "B")]
-        [TestCase(95, 65, ExpectedResult = "B")]
-        [TestCase(65, 90, ExpectedResult = "C")]
-        [TestCase(95, 55, ExpectedResult = "F")]
-        [TestCase(65, 55, ExpectedResult = "F")]
-        [TestCase(50, 90, ExpectedResult = "F")]
-        public string GetGrade_AllGradeLogicalScenarios_ReturnGrade(int score, int attendance)
+        [Theory]
+        [InlineData(95, 90, "A")]
+        [InlineData(85, 90, "B")]
+        [InlineData(65, 90, "C")]
+        [InlineData(95, 55, "F")]
+        [InlineData(95, 65, "B")]
+        [InlineData(65, 55, "F")]
+        [InlineData(50, 90, "F")]
+        public void GetGrade_AllGradeLogicalScenarios_ReturnGrade(int score, int attendance, string eResult)
         {
             // Arrange
             this._gCalculator.Score = score;
             this._gCalculator.AttendancePercentage = attendance;
-            return this._gCalculator.GetGrade();
+            
+            Assert.Equal(eResult, this._gCalculator.GetGrade());
         }
     }
 }
