@@ -83,6 +83,8 @@ namespace Sparky
             string desiredOutput = "hello";
 
             logMock.Setup(u => u.MessageWithReturnStr(It.IsAny<string>())).Returns((string str) => str.ToLower());
+            // Returns a null object, cause it's only configured to "Hi" string
+            //logMock.Setup(u => u.MessageWithReturnStr("Hi")).Returns((string str) => str.ToLower());
 
             Assert.That(logMock.Object.MessageWithReturnStr("HEllO"), Is.EqualTo(desiredOutput));
         }
