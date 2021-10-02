@@ -8,6 +8,9 @@ namespace Sparky
 {
     public interface ILogBook
     {
+        public int LogSeverity { get; set; }
+        public string LogType { get; set; }
+
         void Message(string message);
         bool LogToDb(string message);
         bool LogBalanceAfterWithdraw(int balanceAfterWithdraw);
@@ -18,6 +21,9 @@ namespace Sparky
 
     public class LogBook : ILogBook
     {
+        public int LogSeverity { get; set; }
+        public string LogType { get; set; }
+
         public bool LogBalanceAfterWithdraw(int balanceAfterWithdraw)
         {
             if (balanceAfterWithdraw >= 0)
