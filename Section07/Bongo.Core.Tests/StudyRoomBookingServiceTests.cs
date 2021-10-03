@@ -1,6 +1,7 @@
 ﻿using Bongo.Core.Services;
 using Bongo.DataAccess.Repository.IRepository;
 using Bongo.Models.Model;
+using Bongo.Models.Model.VM;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -91,6 +92,33 @@ namespace Bongo.Core
             Assert.AreEqual(this._request.Email, savedStudyRoomBooking.Email);
             Assert.AreEqual(this._request.Date, savedStudyRoomBooking.Date);
             Assert.AreEqual(this._aviableStudyRoom.First().Id, savedStudyRoomBooking.StudyRoomId);
+        }
+
+        [Test]
+        public void StudyRoomBookingCheck_InputRequest_ValuesMatchInResult()
+        {
+            StudyRoomBookingResult result = this._bookingService.BookStudyRoom(this._request);
+
+            Assert.NotNull(result);
+            Assert.AreEqual(this._request.FirstName, result.FirstName);
+            Assert.AreEqual(this._request.LastName, result.LastName);
+            Assert.AreEqual(this._request.Email, result.Email);
+            Assert.AreEqual(this._request.Date, result.Date);
+        }
+
+        [TestCase(true, ExpectedResult = StudyRoomBookingCode.Success)]
+        [TestCase(false, ExpectedResult = StudyRoomBookingCode.NoRoomAvailable)]
+        //public void ResultCodeSuccess_RoomAviability_ReturnSuccessResultCode()
+        public StudyRoomBookingCode ResultCodeSuccess_RoomAviability_ReturnSuccessResultCode(bool roomAviability)
+        {
+            //var result = this._bookingService.BookStudyRoom(this._request);
+
+            //Assert.AreEqual(StudyRoomBookingCode.Success, result.Code);
+
+            if (!roomAviability)
+                this._aviableStudyRoom.Clear();
+
+            return this._bookingService.BookStudyRoom(this._request).Code;
         }
     }
 }
