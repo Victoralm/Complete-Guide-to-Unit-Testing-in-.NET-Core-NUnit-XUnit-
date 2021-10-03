@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bongo.Models", "..\..\Secti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bongo.Web", "..\..\Section07\Bongo.Web\Bongo.Web.csproj", "{2BBAACEE-93F5-490A-8A9C-A13E47448D60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bongo.Models.Tests", "Bongo.Models.Tests\Bongo.Models.Tests.csproj", "{DF64F6DF-29F4-499F-8B7E-2AA80E1B87FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{2BBAACEE-93F5-490A-8A9C-A13E47448D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BBAACEE-93F5-490A-8A9C-A13E47448D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BBAACEE-93F5-490A-8A9C-A13E47448D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF64F6DF-29F4-499F-8B7E-2AA80E1B87FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF64F6DF-29F4-499F-8B7E-2AA80E1B87FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF64F6DF-29F4-499F-8B7E-2AA80E1B87FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF64F6DF-29F4-499F-8B7E-2AA80E1B87FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{C3ED552D-C576-47A2-9924-5C06B7BC1E6F} = {DA6B237F-B5F3-47B1-AED5-B7EE97CE9D93}
 		{35B9029A-BF0C-40F7-82B2-40B12986B323} = {DA6B237F-B5F3-47B1-AED5-B7EE97CE9D93}
 		{2BBAACEE-93F5-490A-8A9C-A13E47448D60} = {DA6B237F-B5F3-47B1-AED5-B7EE97CE9D93}
+		{DF64F6DF-29F4-499F-8B7E-2AA80E1B87FE} = {DA6B237F-B5F3-47B1-AED5-B7EE97CE9D93}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BD4DC7D-5F5D-48F5-B360-8BCB88B47105}
