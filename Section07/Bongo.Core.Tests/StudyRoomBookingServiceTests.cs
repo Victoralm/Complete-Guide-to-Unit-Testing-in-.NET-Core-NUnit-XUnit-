@@ -1,5 +1,6 @@
 ﻿using Bongo.Core.Services;
 using Bongo.DataAccess.Repository.IRepository;
+using Bongo.Models.Model;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -13,6 +14,8 @@ namespace Bongo.Core
     [TestFixture]
     public class StudyRoomBookingServiceTests
     {
+        private StudyRoomBooking _request;
+        private List<StudyRoom> _aviableStudyRoom;
         private Mock<IStudyRoomBookingRepository> _studyRoomBookingRepoMock;
         private Mock<IStudyRoomRepository> _studyRoomRepoMock;
         private StudyRoomBookingService _bookingService;
@@ -20,8 +23,29 @@ namespace Bongo.Core
         [SetUp]
         public void Setup()
         {
+            this._request = new StudyRoomBooking
+            {
+                FirstName = "Ben",
+                LastName = "Spark",
+                Email = "ben@gmail.com",
+                Date = new DateTime(2022, 1, 1),
+            };
+
+            this._aviableStudyRoom = new List<StudyRoom>
+            {
+                new StudyRoom
+                {
+                    Id = 10,
+                    RoomName = "Michigan",
+                    RoomNumber = "A202",
+                }
+            };
+
             this._studyRoomBookingRepoMock = new Mock<IStudyRoomBookingRepository>();
             this._studyRoomRepoMock = new Mock<IStudyRoomRepository>();
+
+            this._studyRoomRepoMock.Setup(x => x.GetAll()).Returns(this._aviableStudyRoom);
+
             this._bookingService = new StudyRoomBookingService(
                 this._studyRoomBookingRepoMock.Object,
                 this._studyRoomRepoMock.Object
