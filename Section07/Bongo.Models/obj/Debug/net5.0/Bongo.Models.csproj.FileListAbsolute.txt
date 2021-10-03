@@ -9,3 +9,4 @@ H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Sec
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Models\obj\Debug\net5.0\Bongo.Models.dll
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Models\obj\Debug\net5.0\ref\Bongo.Models.dll
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Models\obj\Debug\net5.0\Bongo.Models.pdb
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Models\obj\Debug\net5.0\Bongo.Models.csproj.AssemblyReference.cache

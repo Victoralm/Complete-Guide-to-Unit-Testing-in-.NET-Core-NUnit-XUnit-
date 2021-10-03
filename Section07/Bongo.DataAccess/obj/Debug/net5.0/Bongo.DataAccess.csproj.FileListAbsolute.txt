@@ -11,7 +11,6 @@ H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Sec
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\Bongo.DataAccess.AssemblyInfoInputs.cache
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\Bongo.DataAccess.AssemblyInfo.cs
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\Bongo.DataAccess.csproj.CoreCompileInputs.cache
-H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\Bongo.DataAccess.csproj.CopyComplete
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\Bongo.DataAccess.dll
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\ref\Bongo.DataAccess.dll
 H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.DataAccess\obj\Debug\net5.0\Bongo.DataAccess.pdb
