@@ -16,6 +16,7 @@ namespace Bongo.DataAccess
     {
         private StudyRoomBooking _studyRoomBooking_One;
         private StudyRoomBooking _studyRoomBooking_Two;
+        private DbContextOptions<ApplicationDbContext> _options;
 
         public StudyRoomBookingRepositoryTests()
         {
@@ -40,22 +41,28 @@ namespace Bongo.DataAccess
             };
         }
 
+        [SetUp]
+        public void Setup()
+        {
+            this._options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                .UseInMemoryDatabase(databaseName: "temp_Bongo").Options;
+        }
+
         [Test]
+        [Order(1)]
         public void SaveBooking_BookingOne_CheckTheValuesFromDatabase()
         {
             // arrange
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "temp_Bongo").Options;
 
             // act
-            using (var context = new ApplicationDbContext(options))
+            using (var context = new ApplicationDbContext(this._options))
             {
                 var repository = new StudyRoomBookingRepository(context);
                 repository.Book(this._studyRoomBooking_One);
             }
 
             // assert
-            using (var context = new ApplicationDbContext(options))
+            using (var context = new ApplicationDbContext(this._options))
             {
                 var bookingFromDb = context.StudyRoomBookings.FirstOrDefault(u => u.BookingId == 11);
                 Assert.AreEqual(_studyRoomBooking_One.BookingId, bookingFromDb.BookingId);
@@ -68,23 +75,28 @@ namespace Bongo.DataAccess
         }
 
         [Test]
+        [Order(2)]
         public void GetAllBooking_BookingOneAndTwo_CheckBothTheBookeingFromDatabase()
         {
             // arrange
             var expectedResult = new List<StudyRoomBooking> { this._studyRoomBooking_One, this._studyRoomBooking_Two };
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "temp_Bongo").Options;
+            
 
-            using (var context = new ApplicationDbContext(options))
+            using (var context = new ApplicationDbContext(this._options))
             {
                 var repository = new StudyRoomBookingRepository(context);
+                /**
+                 * Added [Order(value)] and EnsureDeleted() so
+                 * both tests runs fine together and separately
+                 */
+                context.Database.EnsureDeleted();
                 repository.Book(this._studyRoomBooking_One);
                 repository.Book(this._studyRoomBooking_Two);
             }
 
             // act
             List<StudyRoomBooking> actualList;
-            using (var context = new ApplicationDbContext(options))
+            using (var context = new ApplicationDbContext(this._options))
             {
                 var repository = new StudyRoomBookingRepository(context);
                 actualList = repository.GetAll(null).ToList();
