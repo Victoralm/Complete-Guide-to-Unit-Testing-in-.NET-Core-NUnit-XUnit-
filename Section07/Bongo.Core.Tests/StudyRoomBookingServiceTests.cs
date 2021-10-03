@@ -120,5 +120,49 @@ namespace Bongo.Core
 
             return this._bookingService.BookStudyRoom(this._request).Code;
         }
+
+        [TestCase(0, false)]
+        [TestCase(55, true)]
+        public void StudyRoomBooking_BookRoomWithAviability_ReturnsBookingId(int expectedBookingId, bool roomAviability)
+        {
+            // Arrange
+            if (!roomAviability)
+                this._aviableStudyRoom.Clear();
+
+            
+            this._studyRoomBookingRepoMock.Setup(x => x.Book(It.IsAny<StudyRoomBooking>()))
+                .Callback<StudyRoomBooking>(booking =>
+                {
+                    booking.BookingId = 55;
+                });
+
+
+            // Act
+            var result = this._bookingService.BookStudyRoom(this._request);
+
+            // Assert
+            Assert.AreEqual(expectedBookingId, result.BookingId);
+        }
+
+        [Test]
+        public void BookNotInvoked_SaveBookingWithoutAviableRoom_BookMethodNotInvoked()
+        {
+            // Arrange
+            this._aviableStudyRoom.Clear();
+
+
+            this._studyRoomBookingRepoMock.Setup(x => x.Book(It.IsAny<StudyRoomBooking>()))
+                .Callback<StudyRoomBooking>(booking =>
+                {
+                    booking.BookingId = 55;
+                });
+
+
+            // Act
+            var result = this._bookingService.BookStudyRoom(this._request);
+
+            // Assert
+            this._studyRoomBookingRepoMock.Verify(x => x.Book(It.IsAny<StudyRoomBooking>()), Times.Never);
+        }
     }
 }
