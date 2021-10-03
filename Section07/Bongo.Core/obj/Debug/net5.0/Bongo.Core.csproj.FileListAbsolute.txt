@@ -1,0 +1,17 @@
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.Core.deps.json
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.Core.dll
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\ref\Bongo.Core.dll
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.Core.pdb
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.DataAccess.dll
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.Models.dll
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.DataAccess.pdb
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\bin\Debug\net5.0\Bongo.Models.pdb
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.csproj.AssemblyReference.cache
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.GeneratedMSBuildEditorConfig.editorconfig
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.AssemblyInfoInputs.cache
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.AssemblyInfo.cs
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.csproj.CoreCompileInputs.cache
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.csproj.CopyComplete
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.dll
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\ref\Bongo.Core.dll
+H:\Documentos\Udemy\Complete-Guide-to-Unit-Testing-in-.NET-Core-NUnit-XUnit-\Section07\Bongo.Core\obj\Debug\net5.0\Bongo.Core.pdb
